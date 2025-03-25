@@ -55,7 +55,7 @@ When `archinstall` is finished running, use `no` to skip chrooting into the new 
 Log in to the new configuration and do initial click-around configuration. The KDE welcome screen will take you through most of this. 
 - Connect to WiFi
 - Change pointer speed and scroll direction. 
-- Set dark theme(!). Or, my preferred them on KDE, 
+- Set dark theme(!). Or, my preferred purple theme on KDE. 
 - On KDE, disable session restore in `System Settings > Session`
 
 ## Install AUR Helper
@@ -77,7 +77,7 @@ paru -Syu librewolf-bin fish keychain visual-studio-code-bin timeshift-autosnap 
 ```
 
 ## Configure Timeshift Autosnap
-The `timeshift-autosnap` function will create a BTRFS snapshot of the `/` partition almost instantly whenever the system is updated with `sudo pacman -Syu`. I recommend editing `/etc/timeshift-autosnap.conf` and updating `maxSnapshots=12` as I find 3 can be too few sometimes. 
+The `timeshift-autosnap` package will create a BTRFS snapshot of the `/` partition almost instantly whenever the system is updated with `sudo pacman -Syu`. I recommend editing `/etc/timeshift-autosnap.conf` and updating `maxSnapshots=12` as I find 3 can be too few sometimes. 
 
 If you installed Arch with the Grub bootloader and the `grub-btrfs` package, timeshift can make boot entries to take you back in time too. I've never found this necessary, as Arch already has a fallback boot option by default.  
 
@@ -89,7 +89,7 @@ First, copy needed SSH keys from an existing machine using `magic-wormhole`:
 ``` 
 wormhole send ~/.ssh
 ```
-Warning! This will copy things like SSH config and authorized_keys as well.
+> Heads up! This will copy things like SSH config and authorized_keys as well.
 
 On the new machine, run the command shown by magic-wormhole to receive the files. Make sure to run it in the home directory. 
 ```
@@ -110,11 +110,12 @@ if status is-interactive
     keychain --quiet --eval ~/.ssh/id_ed25519 ~/.ssh/id_github | source
 end
 ```
-Type `exit` and then `fish` again to confirm that you're prompted for the SSH key's password if enabled. The keychain SSH variables will be injected into every running fish session, and you won't be prompted for the password again until after reboot. 
+Type `exit` and then `fish` again to confirm that you're prompted for the SSH key's password if enabled. The keychain SSH agent environment variables will be injected into every running fish session, and you won't be prompted for the password again until after reboot. 
 
 ### Change Default Shell
 I change my default shell to fish.
 ```
+which fish # Confirm fish location
 chsh
 ```
 Enter your password, and change the shell to `/usr/bin/fish`.
