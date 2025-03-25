@@ -39,6 +39,7 @@ quit
 You can then check the network status with `ping google.com` if desired. 
 
 ## Install Arch with Archinstall 
+The `archinstall` command is the command line installer bundled with the Arch install medium. Run it to start the TUI-based installer.
 
 Archinstall should be familiar if you've installed Linux before. Here's some notes about my setup.
 - Use BTRFS subvolumes with default structure as the partitioning layout, to support Timeshift later.
@@ -82,7 +83,7 @@ The `timeshift-autosnap` package will create a BTRFS snapshot of the `/` partiti
 If you installed Arch with the Grub bootloader and the `grub-btrfs` package, timeshift can make boot entries to take you back in time too. I've never found this necessary, as Arch already has a fallback boot option by default.  
 
 ## Configure Fish and SSH Keychain
-I prefer to change my shell to `fish` but it's worth noting that this breaks using VSC remote on the machine. It can always be changed back temporarily to use VSC remote. 
+I prefer to change my shell to `fish` but it's worth noting that this breaks using Visual Studio Code remote on the machine. It can always be changed back temporarily to use VSC remote. 
 
 ### Copy ssh files
 First, copy needed SSH keys from an existing machine using `magic-wormhole`:
