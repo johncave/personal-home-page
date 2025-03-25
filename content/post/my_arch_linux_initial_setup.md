@@ -1,6 +1,5 @@
 +++
 date = '2025-03-24T17:30:36+13:00'
-draft = true
 title = 'My Arch Linux Initial Setup'
 +++
 
