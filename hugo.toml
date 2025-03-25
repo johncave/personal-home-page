@@ -1,0 +1,36 @@
+baseURL = 'https://www.johncave.co.nz'
+languageCode = 'en-us'
+title = "John Cave's Blog"
+theme = 'github-style'
+
+[params]
+avatar = "/images/john.jpg"
+headerIcon = "/images/john.jpg"
+author = "John"
+
+enableSearch = true
+
+[outputs]
+  home = ["html", "json"]
+
+[outputFormats.json]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = false
+
+[[params.links]]
+title = "Github"
+href = "https://github.com/johncave"
+icon = "/images/github.svg"
+[[params.links]]
+title = "RSS Feed"
+href = "/index.xml"
+icon = "/images/rss.png"
+
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
